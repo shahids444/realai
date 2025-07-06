@@ -29,7 +29,7 @@ app.post('/analyze-question', async (req, res) => {
       messages: [{ role: "user", content: prompt }]
     }, {
       headers: {
-        'Authorization': `Bearer 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`,
+        'Authorization': `Bearer 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`,
         'Content-Type': 'application/json'
       }
     });
