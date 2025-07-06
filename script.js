@@ -14,13 +14,15 @@ function startListening() {
     const questionBox = document.getElementById("questionBox");
     questionBox.textContent = `You asked: "${spokenQuestion}"`;
 
-    // 🔥 FIX: Make sure the question box becomes visible
+    // ✅ Show the question box
     questionBox.classList.add("show");
 
     try {
-      const res = await fetch('/analyze-question', {
+      const res = await fetch('https://realai-8pru.onrender.com/analyze-question', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify({ question: spokenQuestion })
       });
 
