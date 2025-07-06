@@ -6,7 +6,13 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(cors());
+// Only allow your frontend
+app.use(cors({
+  origin: 'https://shahids444.github.io',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'))); // serve frontend
 
