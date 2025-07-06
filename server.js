@@ -29,7 +29,7 @@ app.post('/analyze-question', async (req, res) => {
       messages: [{ role: "user", content: prompt }]
     }, {
       headers: {
-        'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
+        'Authorization': `Bearer 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`,
         'Content-Type': 'application/json'
       }
     });
