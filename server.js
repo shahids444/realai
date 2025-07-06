@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, '.')));
 // ✅ Use OpenRouter instead of default OpenAI
 const openai = new OpenAI({
   baseURL: "https://openrouter.ai/api/v1", // ✅ Required for OpenRouter
-  apiKey: process.env.OPENROUTER_API_KEY,   // ✅ From .env file
+  apiKey: "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",   // ✅ From .env file
 });
 
 app.post('/analyze-question', async (req, res) => {
