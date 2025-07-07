@@ -6,10 +6,11 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-  origin: 'https://shahids444.github.io',
-  methods: ['GET', 'POST'],
+  origin: ['https://shahids444.github.io', 'http://localhost:3000'],
+  methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+app.options('*', cors()); // Allow all OPTIONS preflight
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '.')));
